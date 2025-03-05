@@ -1,4 +1,4 @@
-from backend.service import Connection as conn
+import backend.service.Connection as conn
 from backend.type import ItemDto
 from backend.processor import OrderQueueProcessor
 import datetime

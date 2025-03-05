@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from ProductDto import ProductDto
+from backend.type.ProductDto import ProductDto
 
 class ItemsDto(BaseModel):
     customer_id: str
