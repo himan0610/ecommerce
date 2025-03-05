@@ -5,7 +5,3 @@ router = APIRouter(
     tags=["shippings"]
 )
 
-@router.patch("/{order_id}")
-async def get():
-    # TODO: Shipping implementation
-    return {"name": "Test Shipping"}
