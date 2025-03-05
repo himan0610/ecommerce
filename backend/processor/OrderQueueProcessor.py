@@ -1,14 +1,16 @@
-import multiprocessing
 from backend.type import ItemDto
 from backend.service.OrderService import saveItem
+import asyncio
 
-queue = multiprocessing.Queue()
+queue = asyncio.Queue(maxsize=1000)
 
-def enqueue(item:ItemDto, flag):
-    queue.put(tuple(item, flag))
+async def enqueue(item:ItemDto, flag):
+    await queue.put(tuple(item, flag))
 
-def execute():
+async def execute():
     while not queue.empty():
-        item = queue.get()
+        item = await queue.get()
         saveItem(item[0], item[1])
+
+asyncio.run(execute())
         

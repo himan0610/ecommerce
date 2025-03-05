@@ -1,4 +1,4 @@
-import connection as conn
+from backend.service import Connection as conn
 from backend.type import ItemDto
 from backend.processor import OrderQueueProcessor
 import datetime
@@ -22,7 +22,7 @@ def create(items:ItemDto):
     OrderQueueProcessor.execute()
     conn.put_connection(connection)
 
-def saveItem(items: ItemDto, flag: bool):
+async def saveItem(items: ItemDto, flag: bool):
     
     connection = conn.get_connection()
 
