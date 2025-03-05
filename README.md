@@ -50,4 +50,4 @@ fastapi dev main.py
 Contributors names and contact info
 
 Himanshu Patel 
-ex. [@himan0610](https://github.com/himan0610)
+[@himan0610](https://github.com/himan0610)
